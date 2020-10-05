@@ -1,0 +1,3 @@
+include ':app:exercicio-meu-nome'
+include ':app'
+rootProject.name = "Aula16"
