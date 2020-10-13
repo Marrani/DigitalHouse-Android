@@ -1,0 +1,23 @@
+package com.gabrielmarrani.exercicio_calculo_salario
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        btnCalcular.setOnClickListener {
+            var hora = edtHoras.text.toString()
+            var valor = edtValor.text.toString()
+
+            if(!hora.isNullOrEmpty() && !valor.isNullOrEmpty()){
+                var result = (hora.toDouble() * valor.toDouble()).toString()
+                txtSalario.text = "R$ $result"
+            }
+        }
+    }
+}

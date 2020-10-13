@@ -1,3 +1,4 @@
+include ':app:exercicio-calculo-salario'
 include ':app:exercicio-conversor'
 include ':app:exercicio-meu-nome'
 include ':app'
