@@ -27,20 +27,13 @@ class MainActivity : AppCompatActivity() {
 
     fun criarLista(personagens: List<Personagem>) {
         val recyclerView = findViewById<RecyclerView>(R.id.lista)
-        val manager = GridLayoutManager(this, 2)
-
-        var toast: Toast? = null
+        val manager = GridLayoutManager(this, 1)
 
         val customAdapter = CustomAdapter(personagens) {
-            toast?.cancel()
 
-            toast = Toast.makeText(this@MainActivity, it.nome, Toast.LENGTH_LONG)
-            toast?.show()
             val intent = Intent(this@MainActivity, DetalhePersonagem::class.java)
             intent.putExtra("NOME", it.nome)
-            intent.putExtra("SEXO", it.localizacao.nome)
-            intent.putExtra("GENERO", it.genero)
-            intent.putExtra("IMAGEM", it.imagemUrl)
+
             startActivity(intent)
         }
 
